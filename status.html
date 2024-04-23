@@ -1,0 +1,791 @@
+﻿<!doctype html>
+<html lang="zxx">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Yogi Ario">
+    <meta name="keywords" content="Yogi Ario">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Yogik.us</title>
+    $(if refresh-timeout)
+    <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+    $(endif)
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link href="static\plugin\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+    <link href="static\plugin\font-awesome\css\fontawesome-all.min.css" rel="stylesheet">
+    <link href="static\plugin\et-line\style.css" rel="stylesheet">
+    <link href="static\plugin\themify-icons\themify-icons.css" rel="stylesheet">
+    <link href="static\plugin\owl-carousel\css\owl.carousel.min.css" rel="stylesheet">
+    <link href="static\plugin\magnific\magnific-popup.css" rel="stylesheet">
+    <link href="static\css\style.css" rel="stylesheet">
+    <link href="static\css\color\default.css" rel="stylesheet" id="color_theme">
+  </head>
+
+  <body data-spy="scroll" data-target="#navbar" data-offset="98">
+    <div id="loading">
+      <div class="load-circle"><span class="one"></span></div>
+    </div>
+    <header>
+      <nav class="navbar header-nav navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img class="light-logo" src="static\img\logo-light.svg" title="" alt="">
+            <img class="dark-logo" src="static\img\logo.svg" title="" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+              <span></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbar">
+            <ul class="navbar-nav ml-auto align-items-center">
+              <li><a class="nav-link" href="login.html">Home</a></li>
+              <li><a class="nav-link" href="aback.html">About</a></li>
+              <li><a class="nav-link" href="#price">Price</a></li>
+              <li><a class="nav-link" href="aback.html">Contact</a></li>
+              <li><a class="nav-link" href="logout.html?erase-cookie=true">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav> 
+    </header>
+    <main>
+      <section id="home" class="home-banner-03 theme-bg bg-effect-box">
+        <div class="bg-effect bg-cover" style="background-image: url(static/img/banner-effect-6.svg);"></div>
+        <div id="particles_effect" class="particles-effect"></div>
+        <div class="container">
+          <div class="row align-items-center justify-content-center p-100px-tb sm-p-60px-b">
+            <div class="col-lg-5 md-p-30px-tb">
+              <h5 class="white-color">Yogik.us</h5>
+              <h1 class="font-alt white-color">Login Hotspot</h1>
+              <p class="white-color-light">Login Hotspot</p>
+              
+              <div class="card-block py-lg px-md" style="color:aliceblue">
+                <table class="table">
+                  <tbody class="align-l">
+                    <tr>
+                      <td>Username</td>
+                      <td>$(username)</td>
+                    </tr>
+                    <tr>
+                      <td>IP Address</td>
+                      <td>$(ip)</td>
+                    </tr>
+                    <tr>
+                      <td>MAC Address</td>
+                      <td>$(mac)</td>
+                    </tr>
+                    $(if session-time-left)
+                    <tr>
+                      <td>Connected / left</td>
+                      <td>$(uptime) / $(session-time-left)</td>
+                    </tr>
+                    $(else)
+                    <tr>
+                      <td>Connected</td>
+                      <td>$(uptime)</td>
+                    </tr>
+                    $(endif)
+                    <tr>
+                      <td>Download / Upload</td>
+                      <td>$(bytes-out-nice) / $(bytes-in-nice)</td>
+                    </tr>
+                    $(if limit-bytes-total)
+                    <tr>
+                      <td>Sisa Kuota</td>
+                      <td>$(if limit-bytes-total) 
+                        <script language=javascript>result = ($(limit-bytes-total)/1000000).toFixed(2)
+                        document.write(result)</script> MiB
+                        $(endif)
+                        $(if limit-bytes-total == '')Unlimited$(endif)</td>
+                    </tr>
+                    $(else)
+                    <tr>
+                      <td>Sisa Kuota</td>
+                      <td>$(if limit-bytes-out) 
+                        <script language=javascript>result = ($(limit-bytes-out)/1000000).toFixed(2)
+                        document.write(result)</script> MiB
+                        $(endif)
+                        $(if limit-bytes-out == '')Unlimited$(endif)</td>
+                    </tr>
+                    $(endif)
+                    $(if refresh-timeout)
+                    <tr>
+                      <td>Status refresh</td>
+                      <td>$(refresh-timeout)</td>
+                    </tr>
+                    $(endif)
+                  </tbody>
+                </table>
+              </div>
+            </div> 
+            <div class="col-lg-7 text-center p-50px-l">
+              <img src="static\img\home-banner-7.svg" title="" alt="">
+            </div>
+          </div> 
+        </div>
+      </section>
+
+      <section id="service" class="section">
+        <div class="container">
+          <div class="row m-45px-b sm-m-25px-b">
+            <div class="col-lg-5 col-md-10">
+              <div class="section-title-01">
+                <h2 class="dark-color font-alt">Apa Keunggulan Yogik.us</h2>
+              </div>
+            </div>
+          </div>
+          
+            <div class="row">
+              <div class="col-lg-4 col-md-6 m-15px-tb">
+                <div class="feature-box-02 text-center">
+                  <div class="icon theme-after">
+                    <i class="ti-check-box theme-bg"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h5 class="font-alt dark-color">Terpercaya</h5>
+                    <p>Jaringan kami dari ISP terpercaya</p>
+					<p>Pembelian Voucer bisa langsung datang ke rumah atau secara online melalui WhatsAap di nomor 081358113087</p>
+					<p>Pembayaran yang aman bisa melalui aplikasi Online berikut: </p>
+					<p>Dana, Ovo, dan ShopeePay</p>
+                  </div>
+                  <a class="link yellow-bg-after" href="#home"><i class="yellow-bg ti-arrow-right"></i></a>
+                </div>
+              </div> 
+
+              <div class="col-lg-4 col-md-6 m-15px-tb">
+                <div class="feature-box-02 text-center">
+                  <div class="icon theme-after">
+                    <i class="ti-rocket theme-bg"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h5 class="font-alt dark-color">Kecepatan Up to dengan Unlimited</h5>
+                    <p>Dengan kecepatan Up to dilengkapi dengan kuota Unlimited anda dapat mengakses internet dengan kecepatan maksimum yaitu diatas 1.5 Mbps hingga 2 Mbps Sehingga aman untuk game dan kegiatan lainnya</p>
+                  </div>
+                  <a class="link yellow-bg-after" href="#home"><i class="yellow-bg ti-arrow-right"></i></a>
+                </div>
+              </div> 
+
+              <div class="col-lg-4 col-md-6 m-15px-tb">
+                <div class="feature-box-02 text-center">
+                  <div class="icon theme-after">
+                    <i class="ti-headphone theme-bg"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h5 class="font-alt dark-color">Support 24 Jam</h5>
+                    <p>Layanan Kami sangat mengutamakan kepuasan pelanggan dengan fitur CS 24 jam anda bisa chat ke kami jika anda mengalami kendala melalui nomor Whatsapp 081358113087</p>
+                  </div>
+                  <a class="link yellow-bg-after" href="#home"><i class="yellow-bg ti-arrow-right"></i></a>
+                </div>
+              </div> 
+
+              </div> 
+            </div> 
+        </div>
+      </section>
+
+      <section id="price" class="section shapes-section gray-bg">
+        <div class="container">
+            <div class="row m-45px-b sm-m-25px-b">
+                <div class="col-lg-5 col-md-10">
+                  <div class="section-title-01">
+                    <h2 class="dark-color font-alt">Paket per Jam Unlimited Quota</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt dark-color">7 Jam</h4>
+                    <p>For Personal User</p>
+                    <div class="price-value theme-color"><span>Rp</span>1K<span class="mo">/Jam</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul>
+                      <li>Up to 1 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited Quota</li>
+                      <li>Support 24 Jam</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-theme">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01 theme-bg active">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt white-color">24 Jam (Recommended)</h4>
+                    <p class="white-color-light">For Personal User</p>
+                    <div class="price-value white-color"><span>Rp</span>3K<span class="mo">/Jam</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul class="white-color-light">
+                    <ul>
+                      <li>Up to 1.5 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited Quota</li>
+                      <li>Support 24 Jam</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-t-white">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt dark-color">14 Jam</h4>
+                    <p>For Personal User</p>
+                    <div class="price-value theme-color"><span>Rp</span>2K<span class="mo">/Jam</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul>
+                    <ul>
+                      <li>Up to 1 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited Quota</li>
+                      <li>Support 24 Jam</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-theme">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+
+      <section id="price" class="section shapes-section gray-bg">
+        <div class="container">
+            <div class="row m-45px-b sm-m-25px-b">
+                <div class="col-lg-5 col-md-10">
+                  <div class="section-title-01">
+                    <h2 class="dark-color font-alt">Paket per Hari Unlimited Quota</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt dark-color">3 Hari</h4>
+                    <p>For Personal User</p>
+                    <div class="price-value theme-color"><span>Rp</span>8K<span class="mo">/Hari</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul>
+                      <li>Up to 1 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited Quota</li>
+                      <li>Support 24 Jam</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-theme">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01 theme-bg active">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt white-color">7 Hari (Recommended)</h4>
+                    <p class="white-color-light">For Personal User</p>
+                    <div class="price-value white-color"><span>Rp</span>12K<span class="mo">/Hari</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul class="white-color-light">
+                      <li>Up to 1 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited Quota</li>
+                      <li>Support 24 Jam</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-t-white">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt dark-color">5 Hari</h4>
+                    <p>For Personal User</p>
+                    <div class="price-value theme-color"><span>Rp</span>10K<span class="mo">/Hari</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul>
+                      <li>Up to 1 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited Quota</li>
+                      <li>Support 24 Jam</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-theme">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+
+          
+
+        </div> 
+
+      <section id="price" class="section shapes-section gray-bg">
+        <div class="container">
+            <div class="row m-45px-b sm-m-25px-b">
+                <div class="col-lg-5 col-md-10">
+                  <div class="section-title-01">
+                    <h2 class="dark-color font-alt">Paket Bulanan</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt dark-color">Trial</h4>
+                    <p>For Personal User</p>
+                    <div class="price-value theme-color"><span>Rp</span>0K<span class="mo">/Jam</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul>
+                      <li>Speed 1 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>limited</li>
+					  <li>Khusus Pengguna Baru akan dapat voucher gratis 1 jam</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-theme">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01 theme-bg active">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt white-color">1 Bulan FULL Speed (Recommended)</h4>
+                    <p class="white-color-light">For Personal User</p>
+                    <div class="price-value white-color"><span>Rp</span>50K<span class="mo">/Bulan</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul class="white-color-light">
+                      <li>Up to 1 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited Quota</li>
+                      <li>Support 24 Jam</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-t-white">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt dark-color">1 Bulan (Limited)</h4>
+                    <p>For Personal User</p>
+                    <div class="price-value theme-color"><span>Rp</span>45K<span class="mo">/Bulan</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul>
+                      <li>Speed 1 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Limited</li>
+                      <li>Support 24 Jam</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-theme">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+      <section id="price" class="section shapes-section gray-bg">
+        <div class="container">
+            <div class="row m-45px-b sm-m-25px-b">
+                <div class="col-lg-5 col-md-10">
+                  <div class="section-title-01">
+                    <h2 class="dark-color font-alt">Paket Game Standart</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt dark-color">8 Jam</h4>
+                    <p>For Personal User</p>
+                    <div class="price-value theme-color"><span>Rp</span>5K<span class="mo">/Jam</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul>
+                      <li>Up to 2 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited</li>
+					  <li>Cocok untuk game, download, Youtube, dan lainnya</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-theme">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01 theme-bg active">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt white-color">1 Hari FAST</h4>
+                    <p class="white-color-light">For Personal User</p>
+                    <div class="price-value white-color"><span>Rp</span>15K<span class="mo">/Hari</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul class="white-color-light">
+                      <li>Up to 2 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited</li>
+                      <li>Cocok untuk game, download, Youtube, dan lainnya</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-t-white">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt dark-color">14 Jam</h4>
+                    <p>For Personal User</p>
+                    <div class="price-value theme-color"><span>Rp</span>10K<span class="mo">/Jam</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul>
+                      <li>Speed 2 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited</li>
+                      <li>Cocok untuk game, download, Youtube, dan lainnya.</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-theme">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+      <section id="price" class="section shapes-section gray-bg">
+        <div class="container">
+            <div class="row m-45px-b sm-m-25px-b">
+                <div class="col-lg-5 col-md-10">
+                  <div class="section-title-01">
+                    <h2 class="dark-color font-alt">VIP Member</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt dark-color">VIP 1</h4>
+                    <p>For Personal User</p>
+                    <div class="price-value theme-color"><span>Rp</span>25K<span class="mo">/Hari</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul>
+                      <li>Up to 3.5 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited</li>
+					  <li>7 Hari</li>
+					  <li>VIP Bisa Request Nama user dan Password</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-theme">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01 theme-bg active">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt white-color">VIP 3(Recommended)</h4>
+                    <p class="white-color-light">For Personal User</p>
+                    <div class="price-value white-color"><span>Rp</span>70K<span class="mo">/Bulan</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul class="white-color-light">
+                      <li>Up to 3.5 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited</li>
+					  <li>30 Hari/1Bulan</li>
+                      <li>VIP Bisa Request Nama user dan Password</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-t-white">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt dark-color">VIP 2</h4>
+                    <p>For Personal User</p>
+                    <div class="price-value theme-color"><span>Rp</span>50K<span class="mo">/Hari</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul>
+                      <li>Up to 3.5 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited</li>
+					  <li>15 Hari</li>
+                      <li>VIP Bisa Request Nama user dan Password</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-theme">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+      <section id="price" class="section shapes-section gray-bg">
+        <div class="container">
+            <div class="row m-45px-b sm-m-25px-b">
+                <div class="col-lg-5 col-md-10">
+                  <div class="section-title-01">
+                    <h2 class="dark-color font-alt">Super VIP Member</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt dark-color">SVIP 1</h4>
+                    <p>For Personal User</p>
+                    <div class="price-value theme-color"><span>Rp</span>Customize<span class="mo">/Jam</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul>
+                      <li>Speed by Request</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited</li>
+					  <li>Menyesuaikan per Jam</li>
+					  <li>VIP Bisa Request Nama user dan Password</li>
+					  <li>Kecepatan internet bisa Request<li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-theme">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01 theme-bg active">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt white-color">SVIP 3(Recommended)</h4>
+                    <p class="white-color-light">For Personal User</p>
+                    <div class="price-value white-color"><span>Rp</span>Customize<span class="mo">/Bulan</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul class="white-color-light">
+                      <li>Speed by Request</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited</li>
+					  <li>Menyesuaikan per Bulan</li>
+                      <li>VIP Bisa Request Nama user dan Password</li>
+					  <li>Kecepatan internet bisa request</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-t-white">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 m-15px-tb">
+                <div class="price-table-01">
+                  <div class="price-header">
+                    <h4 class="price-title font-alt dark-color">SVIP 2</h4>
+                    <p>For Personal User</p>
+                    <div class="price-value theme-color"><span>Rp</span>Customize<span class="mo">/Hari</span></div>
+                  </div>
+                  <div class="price-body">
+                    <ul>
+                      <li>Up to 3.5 Mbps</li>
+                      <li>Download/Upload</li>
+                      <li>Unlimited</li>
+					  <li>Menyesuaikan per Hari</li>
+                      <li>VIP Bisa Request Nama user dan Password</li>
+					  <li>Kecepatan internet bisa Request</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a href="#home" class="btn btn-theme">Beli</a>
+                  </div>
+                </div>
+              </div>
+
+          </div>          
+
+        </div> 
+
+        <div class="shapes-box">
+          <span data-parallax='{"x": 150, "y": -20, "rotateZ":500}'>
+              <img src="static\img\fl-shape-1.png" title="" alt="">
+          </span>
+          <span data-parallax='{"x": 250, "y": 150, "rotateZ":500}'>
+              <img src="static\img\fl-shape-2.png" title="" alt="">
+          </span>
+          <span data-parallax='{"x": -180, "y": 80, "rotateY":2000}'>
+              <img src="static\img\fl-shape-3.png" title="" alt="">
+          </span>
+          <span data-parallax='{"x": -20, "y": 180}'>
+              <img src="static\img\fl-shape-4.png" title="" alt="">
+          </span>
+          <span data-parallax='{"x": 300, "y": 70}'>
+              <img src="static\img\fl-shape-5.png" title="" alt="">
+          </span>
+          <span data-parallax='{"x": 250, "y": 180, "rotateZ":1500}'>
+              <img src="static\img\fl-shape-6.png" title="" alt="">
+          </span>
+          <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+              <img src="static\img\fl-shape-7.png" title="" alt="">
+          </span>
+          <span data-parallax='{"x": 60, "y": -100}'>
+              <img src="static\img\fl-shape-9.png" title="" alt="">
+          </span>
+          <span data-parallax='{"x": -30, "y": 150, "rotateZ":1500}'>
+              <img src="static\img\fl-shape-10.png" title="" alt="">
+          </span>
+      </div>
+      </section>
+
+
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="row m-45px-b sm-m-25px-b">
+            <div class="col-lg-5 col-md-10">
+              <div class="section-title-01">
+                <h2 class="dark-color font-alt">Contact Us</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-8 md-m-30px-b">
+              <div class="contact-form">
+                  <h4 class="dark-color font-alt m-30px-b">Write Message</h4>
+                  <form class="contactform" method="post">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <input id="name" name="name" type="text" placeholder="Name" class="validate form-control" required="">
+                            <span class="input-focus-effect theme-bg"></span>
+                          </div>
+                          </div>
+                          <div class="col-md-6">
+                          <div class="form-group">
+                            <input id="Number" type="Text" placeholder="Your Number" name="Number" class="validate form-control" required="">
+                            <span class="input-focus-effect theme-bg"></span>
+                          </div>
+                          </div>
+                          <div class="col-md-12">
+                          <div class="form-group">
+                            <textarea id="message" placeholder="Write your message" name="message" class="form-control" required=""></textarea>
+                            <span class="input-focus-effect theme-bg"></span>
+                          </div>
+                        </div>
+                          <div class="col-md-12">
+                            <div class="send">
+                              <button class="btn btn-theme" type="submit" name="send"> send message</button>
+                            </div>
+                            <span class="output_message"></span>
+                          </div>
+                        </div>
+                  </form>
+              </div>
+            </div> 
+            <div class="col-lg-4">
+              <div class="contact-info">
+                  <i class="theme-color ti-location-pin"></i>
+                  <h6 class="dark-color font-alt"> Alamat</h6>
+                  <p>Kediri</p>
+              </div>
+              <div class="contact-info">
+                <i class="theme-color ti-mobile"></i>
+                <h6 class="dark-color font-alt">Whatsapp/Telegram</h6>
+                <p>081358113087</p>
+              </div>
+              <div class="contact-info">
+                  <i class="theme-color ti-email"></i>
+                  <h6 class="dark-color font-alt">Email</h6>
+                  <p>kjkabas@gmail.com</p>
+              </div>
+            </div>
+          </div>
+
+          
+        </div> 
+      </section>
+
+    </main>
+    <footer class="footer footer-dark">
+      <div class="footer-copy">
+        <div class="row">
+          <div class="col-12">
+            &copy; Copyright 2022 - 2023 <strong><span>Yogi Ario</span></strong>. All Rights Reserved
+          </div>
+        </div> 
+      </div>
+    </footer>
+    
+    <script src="static\js\jquery-3.2.1.min.js"></script>
+    <script src="static\js\jquery-migrate-3.0.0.min.js"></script>
+    <script src="static\plugin\appear\jquery.appear.js"></script>
+    <script src="static\plugin\bootstrap\js\popper.min.js"></script>
+    <script src="static\plugin\bootstrap\js\bootstrap.js"></script>
+    <script src="static\plugin\particles\particles.min.js"></script>
+    <script src="static\plugin\particles\particles-app.js"></script>
+    <script src="static\js\jquery.parallax-scroll.js"></script>
+    <script src="static\js\custom.js"></script>
+
+    $(if chap-id)
+    <script type="text/javascript" src="md5.js"></script>
+    <script type="text/javascript">
+        $('#loginForm').submit(function () {
+            var password = $('#inputPassword');
+            password.val(hexMD5('$(chap-id)' + password.val() + '$(chap-challenge)'));
+        });
+    </script>
+    $(endif)
+    <script>
+      $("#menu-toggle").click(function (e) {
+          e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+    <script type="text/javascript">
+    <!--
+      document.login.username.focus();
+    //-->
+    </script>
+
+  </body>
+</html>
